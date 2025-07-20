@@ -1,0 +1,118 @@
+---
+// Hero component with brutalist design
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper">
+  <!-- Noise texture overlay -->
+  <div class="noise-overlay"></div>
+  
+  <!-- Geometric shapes background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-64 h-64 bg-electric rotate-45 opacity-10 blur-xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-punk rounded-full opacity-10 blur-xl"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-acid opacity-5 blur-3xl"></div>
+  </div>
+  
+  <!-- Grid pattern -->
+  <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px, #000 41px), repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px, #000 41px);"></div>
+  
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Main content -->
+    <div class="text-center space-y-8">
+      <!-- Glitch text badge -->
+      <div class="inline-block">
+        <div class="bg-ink text-paper px-6 py-2 text-sm font-mono uppercase tracking-widest relative overflow-hidden group">
+          <span class="relative z-10">F*CK THE IRS (LEGALLY)</span>
+          <div class="absolute inset-0 bg-gradient-to-r from-electric via-punk to-acid opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
+      </div>
+      
+      <!-- Main headline with glitch effect -->
+      <h1 class="font-graffiti text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none">
+        <span class="block glitch" data-text="YOUR ART">YOUR ART</span>
+        <span class="block text-neon-pink">DOESN'T FIT</span>
+        <span class="block glitch" data-text="IN A BOX">IN A BOX</span>
+      </h1>
+      
+      <!-- Subheadline with typewriter effect -->
+      <div class="max-w-3xl mx-auto">
+        <p class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase">
+          <span class="gradient-text">Neither should your bookkeeper.</span>
+        </p>
+      </div>
+      
+      <!-- Description -->
+      <div class="max-w-2xl mx-auto space-y-4">
+        <p class="text-lg sm:text-xl font-mono">
+          I'm Jenna. Connecticut's only bookkeeper who gets that your 
+          <span class="text-punk font-bold">3am art supply runs</span> are tax deductible and your 
+          <span class="text-electric font-bold">studio rent paid in paintings</span> is legit income.
+        </p>
+        <p class="text-base sm:text-lg font-mono text-ink/70">
+          No corporate BS. No judgment on your "creative" filing system. 
+          Just someone who turns your beautiful chaos into books that make sense.
+        </p>
+      </div>
+      
+      <!-- CTAs with brutal styling -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+        <button class="btn-brutal group relative overflow-hidden">
+          <span class="relative z-10 flex items-center gap-2">
+            LET'S BURN YOUR SHOEBOX
+            <svg class="w-5 h-5 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </span>
+          <div class="absolute inset-0 bg-gradient-to-r from-electric to-punk opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </button>
+        
+        <a href="#calculator" class="group relative">
+          <div class="absolute inset-0 bg-acid blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative bg-paper border-4 border-ink px-8 py-4 font-bold uppercase tracking-wider hover:translate-x-1 hover:translate-y-1 transition-transform">
+            <span class="text-ink">CALCULATE YOUR CHAOS →</span>
+          </div>
+        </a>
+      </div>
+      
+      <!-- Trust indicators with glitch effect -->
+      <div class="flex flex-wrap items-center justify-center gap-8 pt-12 font-mono text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-punk animate-pulse"></div>
+          <span class="glitch" data-text="50+ ARTISTS SAVED">50+ ARTISTS SAVED</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-electric animate-pulse"></div>
+          <span>$3K+ DEDUCTIONS FOUND</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 bg-acid animate-pulse"></div>
+          <span class="glitch" data-text="ZERO AUDITS">ZERO AUDITS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Animated scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+    <div class="flex flex-col items-center gap-2">
+      <span class="font-mono text-xs uppercase tracking-widest animate-pulse">Scroll for salvation</span>
+      <div class="w-6 h-10 border-2 border-ink relative overflow-hidden">
+        <div class="absolute top-2 left-1/2 -translate-x-1/2 w-1 h-3 bg-punk animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Additional component-specific styles */
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 2s steps(40, end);
+  }
+</style>

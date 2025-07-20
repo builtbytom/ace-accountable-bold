@@ -1,0 +1,24 @@
+{
+  "name": "ace-accountable-bold",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^5.12.0",
+    "tailwindcss": "^3.4.1",
+    "@netlify/functions": "^2.6.0",
+    "@netlify/blobs": "^6.5.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.4.1",
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3"
+  }
+}

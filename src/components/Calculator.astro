@@ -1,0 +1,213 @@
+---
+// Chaos calculator with glitch aesthetic
+---
+
+<section id="calculator" class="relative py-32 bg-paper overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="font-graffiti text-5xl sm:text-6xl md:text-7xl mb-4">
+        <span class="glitch" data-text="CHAOS CALCULATOR">CHAOS CALCULATOR</span>
+      </h2>
+      <p class="font-mono text-xl uppercase">
+        How much money are you leaving on the gallery floor?
+      </p>
+    </div>
+    
+    <!-- Calculator interface -->
+    <div class="relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-electric via-punk to-acid blur-xl opacity-20"></div>
+      <div class="relative bg-ink text-paper p-8 md:p-12 border-8 border-ink" style="box-shadow: 12px 12px 0 0 #000;">
+        
+        <!-- Terminal-style header -->
+        <div class="flex items-center gap-2 mb-8 pb-4 border-b border-paper/20">
+          <div class="w-3 h-3 rounded-full bg-punk"></div>
+          <div class="w-3 h-3 rounded-full bg-acid"></div>
+          <div class="w-3 h-3 rounded-full bg-electric"></div>
+          <span class="ml-4 font-mono text-sm opacity-60">chaos_calculator_v2.exe</span>
+        </div>
+        
+        <form id="chaos-form" class="space-y-8">
+          <!-- Annual income -->
+          <div>
+            <label class="font-mono text-sm text-punk uppercase tracking-wider">
+              > Annual Creative Income_
+            </label>
+            <div class="mt-2 relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">$</span>
+              <input 
+                type="number" 
+                id="income" 
+                class="w-full bg-transparent border-2 border-paper pl-12 pr-4 py-4 font-mono text-xl focus:border-punk focus:outline-none transition-colors"
+                placeholder="30000"
+              />
+              <span class="absolute right-4 top-1/2 -translate-y-1/2 text-xs font-mono text-paper/60 animate-cursor-blink">|</span>
+            </div>
+          </div>
+          
+          <!-- Current tracking -->
+          <div>
+            <label class="font-mono text-sm text-electric uppercase tracking-wider">
+              > Current Receipt Tracking Method_
+            </label>
+            <div class="mt-2 grid grid-cols-2 gap-4">
+              <label class="relative group cursor-pointer">
+                <input type="radio" name="tracking" value="shoebox" class="peer sr-only" />
+                <div class="border-2 border-paper/30 p-4 text-center font-mono peer-checked:border-electric peer-checked:bg-electric peer-checked:text-ink transition-all hover:border-paper">
+                  SHOEBOX
+                </div>
+              </label>
+              <label class="relative group cursor-pointer">
+                <input type="radio" name="tracking" value="floor" class="peer sr-only" />
+                <div class="border-2 border-paper/30 p-4 text-center font-mono peer-checked:border-electric peer-checked:bg-electric peer-checked:text-ink transition-all hover:border-paper">
+                  FLOOR
+                </div>
+              </label>
+              <label class="relative group cursor-pointer">
+                <input type="radio" name="tracking" value="phone" class="peer sr-only" />
+                <div class="border-2 border-paper/30 p-4 text-center font-mono peer-checked:border-electric peer-checked:bg-electric peer-checked:text-ink transition-all hover:border-paper">
+                  PHONE PICS
+                </div>
+              </label>
+              <label class="relative group cursor-pointer">
+                <input type="radio" name="tracking" value="none" class="peer sr-only" checked />
+                <div class="border-2 border-paper/30 p-4 text-center font-mono peer-checked:border-electric peer-checked:bg-electric peer-checked:text-ink transition-all hover:border-paper">
+                  WHAT'S TRACKING?
+                </div>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Deduction awareness -->
+          <div>
+            <label class="font-mono text-sm text-acid uppercase tracking-wider">
+              > Deductions You Know About_
+            </label>
+            <div class="mt-2 space-y-2">
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 bg-transparent border-2 border-paper checked:bg-acid checked:border-acid" />
+                <span class="font-mono group-hover:text-acid transition-colors">Art supplies (obvious)</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 bg-transparent border-2 border-paper checked:bg-acid checked:border-acid" />
+                <span class="font-mono group-hover:text-acid transition-colors">Studio rent</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 bg-transparent border-2 border-paper checked:bg-acid checked:border-acid" />
+                <span class="font-mono group-hover:text-acid transition-colors">Home studio %</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 bg-transparent border-2 border-paper checked:bg-acid checked:border-acid" />
+                <span class="font-mono group-hover:text-acid transition-colors">Museum admissions</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer group">
+                <input type="checkbox" class="w-5 h-5 bg-transparent border-2 border-paper checked:bg-acid checked:border-acid" />
+                <span class="font-mono group-hover:text-acid transition-colors">Art books/mags</span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Calculate button -->
+          <button type="submit" class="w-full relative group overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-electric via-punk to-acid opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <div class="relative bg-paper text-ink py-6 font-graffiti text-3xl tracking-wider hover:translate-x-1 hover:translate-y-1 transition-transform" style="box-shadow: 6px 6px 0 0 #FF006E;">
+              CALCULATE MY CHAOS →
+            </div>
+          </button>
+        </form>
+        
+        <!-- Results (hidden initially) -->
+        <div id="results" class="hidden mt-12 pt-8 border-t border-paper/20">
+          <div class="text-center space-y-6">
+            <p class="font-mono text-sm text-punk">SCANNING... ANALYZING... HOLY SH*T...</p>
+            <div class="space-y-2">
+              <p class="font-graffiti text-5xl text-electric">
+                $<span id="missed-amount">0</span>
+              </p>
+              <p class="font-mono text-xl uppercase">In missed deductions per year</p>
+            </div>
+            <p class="font-mono text-lg text-acid">
+              That's <span id="paint-tubes">0</span> tubes of cadmium red
+            </p>
+            <div class="mt-8 p-6 bg-paper/10 border-2 border-punk">
+              <p class="font-mono text-sm mb-4">YOU'RE PROBABLY MISSING:</p>
+              <ul class="text-left space-y-1 font-mono text-sm" id="missed-list">
+                <!-- Populated by JS -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16">
+      <p class="font-mono text-lg mb-6">
+        Stop leaving money on the studio floor.
+      </p>
+      <a href="tel:860-365-1147" class="inline-flex items-center gap-3 text-2xl font-bold hover:text-punk transition-colors">
+        <span class="text-neon-pink">CALL NOW:</span>
+        <span class="font-mono">860.365.1147</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('chaos-form') as HTMLFormElement;
+  const results = document.getElementById('results');
+  const missedAmount = document.getElementById('missed-amount');
+  const paintTubes = document.getElementById('paint-tubes');
+  const missedList = document.getElementById('missed-list');
+  
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const income = parseInt((document.getElementById('income') as HTMLInputElement).value) || 30000;
+    const tracking = (document.querySelector('input[name="tracking"]:checked') as HTMLInputElement)?.value || 'none';
+    const knownDeductions = document.querySelectorAll('input[type="checkbox"]:checked').length;
+    
+    // Calculate missed deductions
+    let missedPercentage = 0.25; // Base 25%
+    if (tracking === 'none') missedPercentage += 0.15;
+    if (tracking === 'floor') missedPercentage += 0.10;
+    if (tracking === 'shoebox') missedPercentage += 0.05;
+    if (knownDeductions < 3) missedPercentage += 0.10;
+    
+    const missed = Math.round(income * missedPercentage);
+    const tubes = Math.round(missed / 45); // $45 per tube of cadmium red
+    
+    // Update results
+    if (missedAmount) missedAmount.textContent = missed.toLocaleString();
+    if (paintTubes) paintTubes.textContent = tubes.toLocaleString();
+    
+    // Show missed deductions
+    const missedItems = [
+      'Internet bill (research & marketing)',
+      'Phone bill (business %)',
+      'Artist insurance',
+      'Website/portfolio hosting',
+      'Framing supplies',
+      'Photography equipment',
+      'Travel to galleries/shows',
+      'Meals with collectors/curators',
+      'Studio music subscriptions',
+      'Reference materials',
+      'Workshop/class fees',
+      'Professional development'
+    ];
+    
+    if (missedList) {
+      missedList.innerHTML = missedItems
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 6)
+        .map(item => `<li>• ${item}</li>`)
+        .join('');
+    }
+    
+    // Show results with glitch effect
+    results?.classList.remove('hidden');
+    results?.classList.add('glitch');
+    setTimeout(() => results?.classList.remove('glitch'), 1000);
+  });
+</script>

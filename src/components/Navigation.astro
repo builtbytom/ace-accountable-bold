@@ -1,0 +1,94 @@
+---
+// Bold navigation with glitch effects
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+  <div class="px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex items-center justify-between">
+      <!-- Logo with glitch effect -->
+      <a href="/" class="group relative">
+        <span class="font-graffiti text-3xl sm:text-4xl text-paper">
+          <span class="glitch" data-text="ACE">ACE</span>
+        </span>
+        <span class="absolute -bottom-2 left-0 text-xs font-mono text-punk opacity-0 group-hover:opacity-100 transition-opacity">
+          [ACCOUNTABLE]
+        </span>
+      </a>
+      
+      <!-- Desktop navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#manifesto" class="font-mono text-paper uppercase tracking-wider hover:text-neon-cyan transition-colors">
+          MANIFESTO
+        </a>
+        <a href="#services" class="font-mono text-paper uppercase tracking-wider hover:text-neon-pink transition-colors">
+          SERVICES
+        </a>
+        <a href="#calculator" class="font-mono text-paper uppercase tracking-wider hover:text-neon-lime transition-colors">
+          CALCULATE
+        </a>
+        <a href="#testimonials" class="font-mono text-paper uppercase tracking-wider hover:text-neon-cyan transition-colors">
+          PROOF
+        </a>
+      </div>
+      
+      <!-- CTA with neon effect -->
+      <div class="flex items-center gap-4">
+        <a href="tel:860-365-1147" class="hidden sm:flex items-center gap-2 font-mono text-sm text-paper hover:text-neon-pink transition-colors">
+          <span class="w-2 h-2 bg-punk rounded-full animate-pulse"></span>
+          860.365.1147
+        </a>
+        
+        <button class="relative group">
+          <div class="absolute inset-0 bg-punk blur-md opacity-50 group-hover:opacity-100 transition-opacity"></div>
+          <div class="relative bg-ink text-paper px-4 py-2 font-bold uppercase tracking-wider text-sm border border-paper hover:bg-paper hover:text-ink transition-colors">
+            START NOW
+          </div>
+        </button>
+        
+        <!-- Mobile menu trigger -->
+        <button class="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group" id="mobile-menu-btn">
+          <span class="block w-6 h-0.5 bg-paper mb-1.5 transition-transform group-hover:translate-x-1"></span>
+          <span class="block w-4 h-0.5 bg-paper mb-1.5 transition-transform group-hover:-translate-x-1"></span>
+          <span class="block w-6 h-0.5 bg-paper transition-transform group-hover:translate-x-1"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div id="mobile-menu" class="fixed inset-0 bg-ink z-40 hidden">
+  <div class="flex flex-col items-center justify-center h-full space-y-8">
+    <a href="#manifesto" class="font-graffiti text-4xl text-paper hover:text-neon-cyan transition-colors mobile-link">
+      MANIFESTO
+    </a>
+    <a href="#services" class="font-graffiti text-4xl text-paper hover:text-neon-pink transition-colors mobile-link">
+      SERVICES
+    </a>
+    <a href="#calculator" class="font-graffiti text-4xl text-paper hover:text-neon-lime transition-colors mobile-link">
+      CALCULATE
+    </a>
+    <a href="#testimonials" class="font-graffiti text-4xl text-paper hover:text-neon-cyan transition-colors mobile-link">
+      PROOF
+    </a>
+    <a href="tel:860-365-1147" class="font-mono text-xl text-punk">
+      860.365.1147
+    </a>
+  </div>
+</div>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+  
+  mobileMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+  
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

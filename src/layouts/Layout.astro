@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Connecticut's only bookkeeper who gets that your art doesn't fit in a box." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    
+    <!-- Fonts preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body>
+    <slot />
+    
+    <script>
+      // Reveal animations on scroll
+      const reveals = document.querySelectorAll('.reveal');
+      
+      function checkReveals() {
+        reveals.forEach(element => {
+          const windowHeight = window.innerHeight;
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < windowHeight - elementVisible) {
+            element.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', checkReveals);
+      checkReveals();
+      
+      // Glitch effect on hover
+      document.querySelectorAll('.glitch').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          element.style.animation = 'glitch 0.3s infinite';
+        });
+        element.addEventListener('mouseleave', () => {
+          element.style.animation = 'none';
+        });
+      });
+      
+      // Parallax effect
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelectorAll('.parallax');
+        
+        parallax.forEach(element => {
+          const speed = element.dataset.speed || 0.5;
+          element.style.transform = `translateY(${scrolled * speed}px)`;
+        });
+      });
+    </script>
+  </body>
+</html>
