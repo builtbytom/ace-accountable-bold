@@ -1,5 +1,5 @@
 ---
-// Professional calculator component
+// Business expansion calculator
 ---
 
 <section id="calculator" class="relative py-24 bg-gradient-to-b from-white to-fog/30">
@@ -7,215 +7,220 @@
     <!-- Header -->
     <div class="text-center mb-16">
       <h2 class="font-display heading-lg text-midnight mb-4">
-        Discover Your
-        <span class="text-gradient"> Hidden Deductions</span>
+        Business Expansion
+        <span class="text-gradient"> Calculator</span>
       </h2>
       <p class="text-xl text-slate max-w-3xl mx-auto">
-        Most artists miss 30-40% of their eligible tax deductions. Let's uncover yours with a CPA's expertise.
+        Planning to grow your business? This calculator helps you determine if you're 
+        financially ready for expansion—no complex spreadsheets required!
       </p>
     </div>
     
     <!-- Calculator card -->
     <div class="card-bold shadow-modern-lg">
-      <form id="deduction-calculator" class="space-y-8">
-        <!-- Annual income -->
+      <form id="expansion-calculator" class="space-y-6">
+        <!-- Revenue input -->
         <div>
-          <label class="block text-sm font-medium text-midnight mb-2">
-            Annual Creative Income
+          <label for="revenue" class="block text-sm font-medium text-midnight mb-2">
+            Current Monthly Revenue ($)
           </label>
           <div class="relative">
             <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate">$</span>
             <input 
               type="number" 
-              id="income" 
+              id="revenue" 
               class="w-full pl-12 pr-4 py-4 bg-white border-2 border-fog rounded-lg text-xl font-medium focus:border-teal focus:outline-none transition-colors"
-              placeholder="30,000"
+              placeholder="10,000"
               min="0"
-              step="1000"
+              step="100"
             />
           </div>
-          <p class="mt-2 text-sm text-slate">Include all income: sales, commissions, teaching, grants</p>
         </div>
         
-        <!-- Income sources -->
+        <!-- Expenses input -->
         <div>
-          <label class="block text-sm font-medium text-midnight mb-4">
-            Income Sources (Check all that apply)
+          <label for="expenses" class="block text-sm font-medium text-midnight mb-2">
+            Current Monthly Expenses ($)
           </label>
-          <div class="grid sm:grid-cols-2 gap-3">
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="gallery" />
-              <span class="text-slate">Gallery Sales</span>
-            </label>
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="online" />
-              <span class="text-slate">Online Sales</span>
-            </label>
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="commissions" />
-              <span class="text-slate">Commissions</span>
-            </label>
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="teaching" />
-              <span class="text-slate">Teaching/Workshops</span>
-            </label>
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="grants" />
-              <span class="text-slate">Grants/Residencies</span>
-            </label>
-            <label class="flex items-center gap-3 p-4 bg-white border-2 border-fog rounded-lg cursor-pointer hover:border-teal transition-colors">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="licensing" />
-              <span class="text-slate">Licensing/Royalties</span>
-            </label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate">$</span>
+            <input 
+              type="number" 
+              id="expenses" 
+              class="w-full pl-12 pr-4 py-4 bg-white border-2 border-fog rounded-lg text-xl font-medium focus:border-teal focus:outline-none transition-colors"
+              placeholder="7,000"
+              min="0"
+              step="100"
+            />
           </div>
         </div>
         
-        <!-- Current deduction tracking -->
+        <!-- New location rent -->
         <div>
-          <label class="block text-sm font-medium text-midnight mb-4">
-            What expenses do you currently track?
+          <label for="newRent" class="block text-sm font-medium text-midnight mb-2">
+            Estimated Monthly Rent for New Location ($)
           </label>
-          <div class="space-y-3">
-            <label class="flex items-center gap-3">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="supplies" checked />
-              <span class="text-slate">Art supplies & materials</span>
-            </label>
-            <label class="flex items-center gap-3">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="studio" />
-              <span class="text-slate">Studio rent/home studio</span>
-            </label>
-            <label class="flex items-center gap-3">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="travel" />
-              <span class="text-slate">Travel for shows/research</span>
-            </label>
-            <label class="flex items-center gap-3">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="marketing" />
-              <span class="text-slate">Website/marketing costs</span>
-            </label>
-            <label class="flex items-center gap-3">
-              <input type="checkbox" class="w-5 h-5 text-teal rounded focus:ring-teal" value="education" />
-              <span class="text-slate">Classes/professional development</span>
-            </label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate">$</span>
+            <input 
+              type="number" 
+              id="newRent" 
+              class="w-full pl-12 pr-4 py-4 bg-white border-2 border-fog rounded-lg text-xl font-medium focus:border-teal focus:outline-none transition-colors"
+              placeholder="2,500"
+              min="0"
+              step="100"
+            />
+          </div>
+        </div>
+        
+        <!-- Setup costs -->
+        <div>
+          <label for="setupCosts" class="block text-sm font-medium text-midnight mb-2">
+            One-Time Setup Costs ($)
+          </label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate">$</span>
+            <input 
+              type="number" 
+              id="setupCosts" 
+              class="w-full pl-12 pr-4 py-4 bg-white border-2 border-fog rounded-lg text-xl font-medium focus:border-teal focus:outline-none transition-colors"
+              placeholder="15,000"
+              min="0"
+              step="100"
+            />
+          </div>
+          <p class="mt-2 text-sm text-slate">Build-out, equipment, deposits, etc.</p>
+        </div>
+        
+        <!-- Staff costs -->
+        <div>
+          <label for="staffCosts" class="block text-sm font-medium text-midnight mb-2">
+            Additional Monthly Staff Costs ($)
+          </label>
+          <div class="relative">
+            <span class="absolute left-4 top-1/2 -translate-y-1/2 text-xl text-slate">$</span>
+            <input 
+              type="number" 
+              id="staffCosts" 
+              class="w-full pl-12 pr-4 py-4 bg-white border-2 border-fog rounded-lg text-xl font-medium focus:border-teal focus:outline-none transition-colors"
+              placeholder="3,000"
+              min="0"
+              step="100"
+            />
           </div>
         </div>
         
         <!-- Calculate button -->
         <button type="submit" class="w-full btn-primary">
-          Calculate My Potential Savings
+          Calculate Expansion Feasibility
         </button>
       </form>
       
       <!-- Results (hidden initially) -->
-      <div id="results" class="hidden mt-12 pt-8 border-t-2 border-fog">
-        <div class="text-center space-y-6">
-          <div class="inline-flex items-center gap-2 text-teal font-medium">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Analysis Complete</span>
+      <div id="results" class="hidden mt-8 p-6 bg-gradient-to-r from-teal/10 to-coral/10 rounded-xl">
+        <h3 class="font-serif text-xl text-midnight mb-4">Your Financial Analysis:</h3>
+        
+        <div class="space-y-3 mb-6">
+          <div class="flex justify-between items-center">
+            <span class="text-slate">Current Monthly Profit:</span>
+            <span class="font-semibold text-midnight text-lg">$<span id="currentProfit">0</span></span>
           </div>
-          
-          <div>
-            <p class="text-lg text-slate mb-2">You're likely missing approximately:</p>
-            <p class="font-serif text-5xl md:text-6xl text-coral">
-              $<span id="missed-amount">0</span>
-            </p>
-            <p class="text-xl text-slate mt-2">in annual tax deductions</p>
+          <div class="flex justify-between items-center">
+            <span class="text-slate">Additional Monthly Costs:</span>
+            <span class="font-semibold text-midnight text-lg">$<span id="additionalCosts">0</span></span>
           </div>
-          
-          <div class="bg-gradient-to-br from-teal/5 to-coral/5 rounded-xl p-6 text-left">
-            <p class="font-semibold text-midnight mb-3">Common missed deductions for artists include:</p>
-            <ul class="space-y-2 text-slate" id="missed-list">
-              <!-- Populated by JavaScript -->
-            </ul>
+          <div class="flex justify-between items-center">
+            <span class="text-slate">Projected Cash Flow After Expansion:</span>
+            <span id="projectedFlow" class="font-semibold text-lg">$0</span>
           </div>
-          
-          <div class="space-y-4">
-            <p class="text-lg text-slate">
-              That's <span id="monthly-savings" class="font-semibold text-teal">$0</span> 
-              per month you could be saving
-            </p>
-            <button class="btn-coral">
-              Let's Capture These Savings →
-            </button>
+          <div id="recoveryTime" class="flex justify-between items-center">
+            <span class="text-slate">Time to Recover Setup Costs:</span>
+            <span class="font-semibold text-midnight text-lg"><span id="recoveryMonths">0</span> months</span>
           </div>
+        </div>
+        
+        <div class="p-4 bg-white rounded-lg">
+          <p id="recommendation" class="text-sm text-slate leading-relaxed"></p>
+        </div>
+        
+        <div class="mt-6 text-center">
+          <p class="text-sm text-slate mb-4">
+            Need help planning your expansion financially?
+          </p>
+          <a href="#contact" class="btn-coral inline-block">
+            Let's Talk About Your Goals →
+          </a>
         </div>
       </div>
     </div>
     
-    <!-- Trust message -->
-    <div class="text-center mt-12">
+    <!-- Call to action -->
+    <div class="text-center mt-12 space-y-4">
+      <p class="text-lg text-slate">
+        Your bookkeeping partner should help you make smart growth decisions
+      </p>
       <p class="text-sm text-slate">
         <svg class="w-4 h-4 inline mr-1 text-teal" fill="currentColor" viewBox="0 0 20 20">
           <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
         </svg>
-        Your information is secure and never shared
+        Calculation for illustration purposes only • Consult with a CPA for accurate projections
       </p>
     </div>
   </div>
 </section>
 
 <script>
-  const form = document.getElementById('deduction-calculator') as HTMLFormElement;
+  const form = document.getElementById('expansion-calculator') as HTMLFormElement;
   const results = document.getElementById('results');
-  const missedAmount = document.getElementById('missed-amount');
-  const monthlySavings = document.getElementById('monthly-savings');
-  const missedList = document.getElementById('missed-list');
   
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const income = parseInt((document.getElementById('income') as HTMLInputElement).value) || 30000;
-    const checkedDeductions = document.querySelectorAll('input[type="checkbox"][value]:checked').length;
+    // Get input values
+    const revenue = parseFloat((document.getElementById('revenue') as HTMLInputElement).value) || 0;
+    const expenses = parseFloat((document.getElementById('expenses') as HTMLInputElement).value) || 0;
+    const newRent = parseFloat((document.getElementById('newRent') as HTMLInputElement).value) || 0;
+    const setupCosts = parseFloat((document.getElementById('setupCosts') as HTMLInputElement).value) || 0;
+    const staffCosts = parseFloat((document.getElementById('staffCosts') as HTMLInputElement).value) || 0;
     
-    // Calculate missed deductions based on what they're NOT tracking
-    let deductionRate = 0.35; // Base 35% for artists
-    
-    // Adjust based on income sources
-    const incomeSources = document.querySelectorAll('input[type="checkbox"][value^="gallery"]:checked, input[type="checkbox"][value^="online"]:checked, input[type="checkbox"][value^="commissions"]:checked').length;
-    if (incomeSources >= 3) deductionRate += 0.05;
-    
-    // Reduce by what they're already tracking
-    deductionRate -= (checkedDeductions * 0.03);
-    deductionRate = Math.max(deductionRate, 0.15); // Minimum 15%
-    
-    const missed = Math.round(income * deductionRate);
-    const monthly = Math.round(missed / 12);
+    // Calculate metrics
+    const currentProfit = revenue - expenses;
+    const additionalCosts = newRent + staffCosts;
+    const projectedCashFlow = currentProfit - additionalCosts;
+    const monthsToRecover = projectedCashFlow > 0 ? Math.ceil(setupCosts / projectedCashFlow) : 0;
     
     // Update results
-    if (missedAmount) missedAmount.textContent = missed.toLocaleString();
-    if (monthlySavings) monthlySavings.textContent = `$${monthly.toLocaleString()}`;
+    document.getElementById('currentProfit')!.textContent = currentProfit.toLocaleString();
+    document.getElementById('additionalCosts')!.textContent = additionalCosts.toLocaleString();
     
-    // Show relevant missed deductions
-    const allPossibleDeductions = [
-      'Home studio percentage (utilities, rent, insurance)',
-      'Cell phone & internet (business percentage)',
-      'Professional photography & documentation',
-      'Framing & presentation materials',
-      'Gallery opening expenses & travel',
-      'Art fair booth fees & displays',
-      'Professional memberships & subscriptions',
-      'Studio assistant or intern costs',
-      'Equipment depreciation',
-      'Professional development courses',
-      'Research materials & museum admissions',
-      'Studio music/streaming subscriptions',
-      'Shipping & packaging supplies',
-      'Business insurance premiums',
-      'Marketing & advertising costs'
-    ];
+    const flowElement = document.getElementById('projectedFlow')!;
+    flowElement.textContent = `$${Math.abs(projectedCashFlow).toLocaleString()}`;
+    flowElement.className = projectedCashFlow >= 0 ? 'font-semibold text-lg text-teal' : 'font-semibold text-lg text-coral';
+    if (projectedCashFlow < 0) {
+      flowElement.textContent += ' (deficit)';
+    }
     
-    // Show 5-7 random deductions they might be missing
-    const shuffled = allPossibleDeductions.sort(() => Math.random() - 0.5);
-    const toShow = shuffled.slice(0, Math.min(7, Math.max(5, 12 - checkedDeductions)));
+    // Recovery time
+    const recoveryDiv = document.getElementById('recoveryTime')!;
+    if (setupCosts > 0 && projectedCashFlow > 0) {
+      document.getElementById('recoveryMonths')!.textContent = monthsToRecover.toString();
+      recoveryDiv.style.display = 'flex';
+    } else {
+      recoveryDiv.style.display = 'none';
+    }
     
-    if (missedList) {
-      missedList.innerHTML = toShow
-        .map(item => `<li class="flex items-start gap-2">
-          <span class="text-coral mt-1">•</span>
-          <span>${item}</span>
-        </li>`)
-        .join('');
+    // Generate recommendation
+    const recommendation = document.getElementById('recommendation')!;
+    if (currentProfit <= 0) {
+      recommendation.innerHTML = `<span class="font-semibold text-coral">Hold off for now.</span> Your current business isn't profitable yet. Focus on increasing revenue or reducing expenses before expanding.`;
+    } else if (projectedCashFlow < 0) {
+      recommendation.innerHTML = `<span class="font-semibold text-amber">Proceed with caution.</span> The expansion would put you in the red by $${Math.abs(projectedCashFlow).toLocaleString()}/month. Consider ways to increase revenue or reduce expansion costs.`;
+    } else if (monthsToRecover > 24) {
+      recommendation.innerHTML = `<span class="font-semibold text-amber">This is a long-term investment.</span> It will take ${monthsToRecover} months to recover your setup costs. Make sure you have adequate reserves.`;
+    } else if (projectedCashFlow < currentProfit * 0.2) {
+      recommendation.innerHTML = `<span class="font-semibold text-teal">Tight but doable.</span> You'll maintain positive cash flow, but margins will be thin. Consider building a 6-month reserve first.`;
+    } else {
+      recommendation.innerHTML = `<span class="font-semibold text-teal">Looking good!</span> You'll maintain healthy cash flow of $${projectedCashFlow.toLocaleString()}/month and recover setup costs in ${monthsToRecover} months. Smart financial planning!`;
     }
     
     // Show results with smooth scroll
