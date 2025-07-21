@@ -2,8 +2,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Import Bebas Neue for graffiti font */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+/* Import professional fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600&display=swap');
 
 @layer base {
   html {
@@ -11,97 +11,49 @@
   }
   
   body {
-    @apply bg-paper text-ink antialiased;
-    background-image: var(--bg-noise);
+    @apply bg-pearl text-midnight antialiased;
   }
   
   ::selection {
-    @apply bg-punk text-paper;
-  }
-  
-  /* Custom cursor */
-  * {
-    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='10' fill='%23FF006E'/%3E%3C/svg%3E") 16 16, auto;
-  }
-  
-  a, button {
-    cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='10' fill='%2300F5FF'/%3E%3C/svg%3E") 16 16, pointer;
+    @apply bg-teal text-white;
   }
 }
 
 @layer components {
-  /* Brutal buttons */
-  .btn-brutal {
-    @apply relative px-8 py-4 bg-ink text-paper font-bold uppercase tracking-wider transition-all duration-200;
-    @apply hover:translate-x-1 hover:translate-y-1;
-    box-shadow: 4px 4px 0 0 #000;
+  /* Modern buttons */
+  .btn-primary {
+    @apply relative px-8 py-4 bg-teal text-white font-medium rounded-lg transition-all duration-300;
+    @apply hover:bg-ocean hover:shadow-modern-lg hover:-translate-y-0.5;
   }
   
-  .btn-brutal:hover {
-    box-shadow: 2px 2px 0 0 #000;
+  .btn-secondary {
+    @apply relative px-8 py-4 bg-white text-midnight font-medium rounded-lg border-2 border-fog transition-all duration-300;
+    @apply hover:border-teal hover:shadow-modern hover:-translate-y-0.5;
   }
   
-  .btn-brutal-pink {
-    @apply bg-punk text-paper;
-    box-shadow: 4px 4px 0 0 #FF006E;
+  .btn-coral {
+    @apply relative px-8 py-4 bg-coral text-white font-medium rounded-lg transition-all duration-300;
+    @apply hover:bg-opacity-90 hover:shadow-modern-lg hover:-translate-y-0.5;
   }
   
-  .btn-brutal-pink:hover {
-    box-shadow: 2px 2px 0 0 #FF006E;
+  /* Text effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal via-ocean to-coral bg-clip-text text-transparent;
   }
   
-  /* Neon text effects */
-  .text-neon-pink {
-    @apply text-punk;
-    text-shadow: 
-      0 0 10px #FF006E,
-      0 0 20px #FF006E,
-      0 0 30px #FF006E;
+  .text-gradient-subtle {
+    @apply bg-gradient-to-r from-midnight via-slate to-midnight bg-clip-text text-transparent;
   }
   
-  .text-neon-cyan {
-    @apply text-electric;
-    text-shadow: 
-      0 0 10px #00F5FF,
-      0 0 20px #00F5FF,
-      0 0 30px #00F5FF;
+  /* Card styles */
+  .card-modern {
+    @apply bg-white rounded-2xl p-8 shadow-soft transition-all duration-300;
+    @apply hover:shadow-modern-lg hover:-translate-y-1;
   }
   
-  .text-neon-lime {
-    @apply text-acid;
-    text-shadow: 
-      0 0 10px #CCFF00,
-      0 0 20px #CCFF00,
-      0 0 30px #CCFF00;
-  }
-  
-  /* Glitch text */
-  .glitch {
-    position: relative;
-  }
-  
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .glitch::before {
-    @apply text-electric;
-    animation: glitch 0.3s infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-    transform: translate(-2px, -2px);
-  }
-  
-  .glitch::after {
-    @apply text-punk;
-    animation: glitch-2 0.3s infinite;
-    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-    transform: translate(2px, 2px);
+  .card-bold {
+    @apply relative bg-white rounded-2xl p-8 overflow-hidden;
+    @apply before:absolute before:inset-0 before:bg-gradient-to-br before:from-teal/5 before:to-coral/5;
   }
   
   /* Reveal animations */
@@ -116,33 +68,56 @@
     transform: translateY(0);
   }
   
-  /* Noise overlay */
-  .noise-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    opacity: 0.03;
-    z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' /%3E%3C/svg%3E");
+  /* Modern grid background */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  
+  /* Floating shapes */
+  .shape-blob {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: blob 8s ease-in-out infinite;
+  }
+  
+  @keyframes blob {
+    0%, 100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    50% {
+      border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    }
+  }
+  
+  /* Typography utilities */
+  .heading-xl {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-tight;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold leading-tight;
   }
 }
 
 @layer utilities {
-  /* Magazine-style text wrapping */
-  .text-wrap-balance {
+  /* Modern text utilities */
+  .text-balance {
     text-wrap: balance;
   }
   
-  /* Perspective for 3D effects */
-  .perspective-1000 {
-    perspective: 1000px;
+  /* Backdrop effects */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
   }
   
-  /* Custom gradient text */
-  .gradient-text {
-    @apply bg-gradient-to-r from-electric via-punk to-acid bg-clip-text text-transparent;
+  /* Smooth gradients */
+  .gradient-smooth {
+    background: linear-gradient(135deg, #0891B2 0%, #0EA5E9 50%, #FB7185 100%);
   }
 }

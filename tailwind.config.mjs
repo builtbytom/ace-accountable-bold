@@ -4,74 +4,59 @@ export default {
   theme: {
     extend: {
       colors: {
-        // High contrast black/white base
-        'ink': '#000000',
-        'paper': '#FFFFFF',
+        // Professional modern palette
+        'midnight': '#0F172A', // Deep blue-black
+        'slate': '#334155',
+        'pearl': '#FAFBFC',
         
-        // Neon accent colors
-        'electric': '#00F5FF', // Cyan
-        'punk': '#FF006E', // Hot pink
-        'acid': '#CCFF00', // Lime
-        'violet': '#8B00FF', // Electric purple
+        // Accent colors - sophisticated
+        'teal': '#0891B2', // Professional teal
+        'coral': '#FB7185', // Warm coral
+        'amber': '#F59E0B', // Golden accent
+        'ocean': '#0EA5E9', // Bright blue
         
-        // Dark mode variations
-        'void': '#0A0A0A',
-        'smoke': '#1A1A1A',
+        // Neutral grays
+        'ash': '#64748B',
+        'fog': '#E2E8F0',
       },
       fontFamily: {
-        'display': ['Inter', 'system-ui', 'sans-serif'],
-        'graffiti': ['Bebas Neue', 'Impact', 'sans-serif'],
-        'mono': ['JetBrains Mono', 'monospace'],
+        'display': ['Poppins', 'system-ui', 'sans-serif'],
+        'serif': ['Playfair Display', 'Georgia', 'serif'],
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
-        'glitch': 'glitch 2s infinite',
-        'glitch-2': 'glitch-2 2.5s infinite',
-        'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+        'fade-up': 'fade-up 0.6s ease-out',
+        'fade-in': 'fade-in 0.8s ease-out',
         'slide-up': 'slide-up 0.5s ease-out',
-        'cursor-blink': 'cursor-blink 1s infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
-        glitch: {
-          '0%, 100%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
+        'fade-up': {
+          '0%': { transform: 'translateY(30px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        'glitch-2': {
-          '0%, 100%': { transform: 'translate(0) skew(0deg)' },
-          '20%': { transform: 'translate(-4px, 0) skew(-2deg)' },
-          '40%': { transform: 'translate(4px, 0) skew(2deg)' },
-          '60%': { transform: 'translate(0) skew(-1deg)' },
-        },
-        'neon-pulse': {
-          '0%, 100%': { 
-            'box-shadow': '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
-            'opacity': '1'
-          },
-          '50%': { 
-            'box-shadow': '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
-            'opacity': '0.8'
-          },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
         'slide-up': {
           '0%': { transform: 'translateY(100px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        'cursor-blink': {
-          '0%, 50%': { opacity: '1' },
-          '51%, 100%': { opacity: '0' },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
       },
       boxShadow: {
-        'brutal': '8px 8px 0 0 #000',
-        'brutal-sm': '4px 4px 0 0 #000',
-        'neon-pink': '0 0 20px #FF006E',
-        'neon-cyan': '0 0 20px #00F5FF',
-        'neon-lime': '0 0 20px #CCFF00',
+        'modern': '0 10px 30px -10px rgba(0, 0, 0, 0.1)',
+        'modern-lg': '0 20px 40px -15px rgba(0, 0, 0, 0.15)',
+        'glow': '0 0 30px rgba(8, 145, 178, 0.3)',
+        'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
       },
       backgroundImage: {
-        'noise': `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E")`,
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-mesh': `url("data:image/svg+xml,%3Csvg width='1200' height='800' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230891B2;stop-opacity:0.05' /%3E%3Cstop offset='100%25' style='stop-color:%23FB7185;stop-opacity:0.05' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='1200' height='800' fill='url(%23a)' /%3E%3C/svg%3E")`,
       },
     },
   },

@@ -1,118 +1,86 @@
 ---
-// Hero component with brutalist design
+// Hero component with modern professional design
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-paper">
-  <!-- Noise texture overlay -->
-  <div class="noise-overlay"></div>
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-pearl via-white to-fog/30">
+  <!-- Background elements -->
+  <div class="absolute inset-0 grid-pattern opacity-[0.02]"></div>
   
-  <!-- Geometric shapes background -->
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-20 left-10 w-64 h-64 bg-electric rotate-45 opacity-10 blur-xl"></div>
-    <div class="absolute bottom-20 right-10 w-96 h-96 bg-punk rounded-full opacity-10 blur-xl"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-acid opacity-5 blur-3xl"></div>
-  </div>
-  
-  <!-- Grid pattern -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, #000 0px, transparent 1px, transparent 40px, #000 41px), repeating-linear-gradient(90deg, #000 0px, transparent 1px, transparent 40px, #000 41px);"></div>
+  <!-- Floating shapes -->
+  <div class="absolute top-20 -left-20 w-96 h-96 bg-teal/10 rounded-full blur-3xl animate-float"></div>
+  <div class="absolute bottom-20 -right-20 w-96 h-96 bg-coral/10 rounded-full blur-3xl animate-float" style="animation-delay: 3s;"></div>
   
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Main content -->
     <div class="text-center space-y-8">
-      <!-- Glitch text badge -->
-      <div class="inline-block">
-        <div class="bg-ink text-paper px-6 py-2 text-sm font-mono uppercase tracking-widest relative overflow-hidden group">
-          <span class="relative z-10">F*CK THE IRS (LEGALLY)</span>
-          <div class="absolute inset-0 bg-gradient-to-r from-electric via-punk to-acid opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-soft">
+        <div class="w-2 h-2 bg-teal rounded-full animate-pulse"></div>
+        <span class="text-sm font-medium text-slate">Connecticut's Artist-Focused Bookkeeper</span>
       </div>
       
-      <!-- Main headline with glitch effect -->
-      <h1 class="font-graffiti text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-none">
-        <span class="block glitch" data-text="YOUR ART">YOUR ART</span>
-        <span class="block text-neon-pink">DOESN'T FIT</span>
-        <span class="block glitch" data-text="IN A BOX">IN A BOX</span>
+      <!-- Main headline -->
+      <h1 class="font-display heading-xl text-midnight max-w-5xl mx-auto">
+        Your art is
+        <span class="text-gradient font-serif italic">serious business</span>
+        <br />
+        Let's treat it that way.
       </h1>
       
-      <!-- Subheadline with typewriter effect -->
-      <div class="max-w-3xl mx-auto">
-        <p class="text-xl sm:text-2xl md:text-3xl font-display font-bold uppercase">
-          <span class="gradient-text">Neither should your bookkeeper.</span>
-        </p>
-      </div>
+      <!-- Subheadline -->
+      <p class="text-xl sm:text-2xl text-slate max-w-3xl mx-auto leading-relaxed">
+        I'm Jenna. I help Connecticut artists transform creative chaos into 
+        <span class="font-semibold text-teal">clear financials</span>, 
+        <span class="font-semibold text-coral">smart tax strategies</span>, and 
+        <span class="font-semibold text-amber">sustainable growth</span>.
+      </p>
       
-      <!-- Description -->
-      <div class="max-w-2xl mx-auto space-y-4">
-        <p class="text-lg sm:text-xl font-mono">
-          I'm Jenna. Connecticut's only bookkeeper who gets that your 
-          <span class="text-punk font-bold">3am art supply runs</span> are tax deductible and your 
-          <span class="text-electric font-bold">studio rent paid in paintings</span> is legit income.
-        </p>
-        <p class="text-base sm:text-lg font-mono text-ink/70">
-          No corporate BS. No judgment on your "creative" filing system. 
-          Just someone who turns your beautiful chaos into books that make sense.
-        </p>
-      </div>
-      
-      <!-- CTAs with brutal styling -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-        <button class="btn-brutal group relative overflow-hidden">
-          <span class="relative z-10 flex items-center gap-2">
-            LET'S BURN YOUR SHOEBOX
-            <svg class="w-5 h-5 group-hover:rotate-45 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      <!-- CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <button class="btn-primary group">
+          <span class="flex items-center gap-2">
+            Start Your Financial Journey
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
           </span>
-          <div class="absolute inset-0 bg-gradient-to-r from-electric to-punk opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </button>
         
-        <a href="#calculator" class="group relative">
-          <div class="absolute inset-0 bg-acid blur-xl opacity-50 group-hover:opacity-100 transition-opacity"></div>
-          <div class="relative bg-paper border-4 border-ink px-8 py-4 font-bold uppercase tracking-wider hover:translate-x-1 hover:translate-y-1 transition-transform">
-            <span class="text-ink">CALCULATE YOUR CHAOS →</span>
-          </div>
+        <a href="#calculator" class="btn-secondary">
+          Calculate Your Potential
         </a>
       </div>
       
-      <!-- Trust indicators with glitch effect -->
-      <div class="flex flex-wrap items-center justify-center gap-8 pt-12 font-mono text-sm">
+      <!-- Trust indicators -->
+      <div class="flex flex-wrap items-center justify-center gap-8 pt-8 text-sm text-ash">
         <div class="flex items-center gap-2">
-          <div class="w-2 h-2 bg-punk animate-pulse"></div>
-          <span class="glitch" data-text="50+ ARTISTS SAVED">50+ ARTISTS SAVED</span>
+          <svg class="w-5 h-5 text-teal" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path>
+          </svg>
+          <span>50+ Artists Empowered</span>
         </div>
         <div class="flex items-center gap-2">
-          <div class="w-2 h-2 bg-electric animate-pulse"></div>
-          <span>$3K+ DEDUCTIONS FOUND</span>
+          <svg class="w-5 h-5 text-coral" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>$3K+ Average Tax Savings</span>
         </div>
         <div class="flex items-center gap-2">
-          <div class="w-2 h-2 bg-acid animate-pulse"></div>
-          <span class="glitch" data-text="ZERO AUDITS">ZERO AUDITS</span>
+          <svg class="w-5 h-5 text-amber" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+          </svg>
+          <span>Since 2015</span>
         </div>
       </div>
     </div>
   </div>
   
-  <!-- Animated scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
     <div class="flex flex-col items-center gap-2">
-      <span class="font-mono text-xs uppercase tracking-widest animate-pulse">Scroll for salvation</span>
-      <div class="w-6 h-10 border-2 border-ink relative overflow-hidden">
-        <div class="absolute top-2 left-1/2 -translate-x-1/2 w-1 h-3 bg-punk animate-bounce"></div>
+      <span class="text-xs text-ash uppercase tracking-wider">Explore</span>
+      <div class="w-6 h-10 border-2 border-ash/30 rounded-full relative">
+        <div class="absolute top-2 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-teal rounded-full animate-bounce"></div>
       </div>
     </div>
   </div>
 </section>
-
-<style>
-  /* Additional component-specific styles */
-  @keyframes typewriter {
-    from { width: 0; }
-    to { width: 100%; }
-  }
-  
-  .typewriter {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typewriter 2s steps(40, end);
-  }
-</style>

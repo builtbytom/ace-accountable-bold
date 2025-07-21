@@ -1,89 +1,109 @@
 ---
-// Bold navigation with glitch effects
+// Modern professional navigation
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-  <div class="px-4 sm:px-6 lg:px-8 py-6">
-    <div class="flex items-center justify-between">
-      <!-- Logo with glitch effect -->
-      <a href="/" class="group relative">
-        <span class="font-graffiti text-3xl sm:text-4xl text-paper">
-          <span class="glitch" data-text="ACE">ACE</span>
-        </span>
-        <span class="absolute -bottom-2 left-0 text-xs font-mono text-punk opacity-0 group-hover:opacity-100 transition-opacity">
-          [ACCOUNTABLE]
-        </span>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-fog/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="font-serif text-3xl font-bold text-teal">ACE</span>
+        <span class="text-sm font-medium text-slate">Accountable</span>
       </a>
       
       <!-- Desktop navigation -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="#manifesto" class="font-mono text-paper uppercase tracking-wider hover:text-neon-cyan transition-colors">
-          MANIFESTO
+        <a href="#about" class="text-slate hover:text-teal transition-colors font-medium">
+          About
         </a>
-        <a href="#services" class="font-mono text-paper uppercase tracking-wider hover:text-neon-pink transition-colors">
-          SERVICES
+        <a href="#services" class="text-slate hover:text-teal transition-colors font-medium">
+          Services
         </a>
-        <a href="#calculator" class="font-mono text-paper uppercase tracking-wider hover:text-neon-lime transition-colors">
-          CALCULATE
+        <a href="#calculator" class="text-slate hover:text-teal transition-colors font-medium">
+          Calculator
         </a>
-        <a href="#testimonials" class="font-mono text-paper uppercase tracking-wider hover:text-neon-cyan transition-colors">
-          PROOF
+        <a href="#testimonials" class="text-slate hover:text-teal transition-colors font-medium">
+          Success Stories
         </a>
       </div>
       
-      <!-- CTA with neon effect -->
-      <div class="flex items-center gap-4">
-        <a href="tel:860-365-1147" class="hidden sm:flex items-center gap-2 font-mono text-sm text-paper hover:text-neon-pink transition-colors">
-          <span class="w-2 h-2 bg-punk rounded-full animate-pulse"></span>
-          860.365.1147
+      <!-- Contact info and CTA -->
+      <div class="flex items-center gap-6">
+        <a href="tel:860-365-1147" class="hidden sm:flex items-center gap-2 text-slate hover:text-teal transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+          <span class="text-sm font-medium">860.365.1147</span>
         </a>
         
-        <button class="relative group">
-          <div class="absolute inset-0 bg-punk blur-md opacity-50 group-hover:opacity-100 transition-opacity"></div>
-          <div class="relative bg-ink text-paper px-4 py-2 font-bold uppercase tracking-wider text-sm border border-paper hover:bg-paper hover:text-ink transition-colors">
-            START NOW
-          </div>
+        <button class="btn-coral text-sm">
+          Get Started
         </button>
         
-        <!-- Mobile menu trigger -->
-        <button class="md:hidden relative w-8 h-8 flex flex-col justify-center items-center group" id="mobile-menu-btn">
-          <span class="block w-6 h-0.5 bg-paper mb-1.5 transition-transform group-hover:translate-x-1"></span>
-          <span class="block w-4 h-0.5 bg-paper mb-1.5 transition-transform group-hover:-translate-x-1"></span>
-          <span class="block w-6 h-0.5 bg-paper transition-transform group-hover:translate-x-1"></span>
+        <!-- Mobile menu button -->
+        <button class="md:hidden p-2" id="mobile-menu-btn">
+          <svg class="w-6 h-6 text-slate" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
         </button>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- Mobile menu overlay -->
-<div id="mobile-menu" class="fixed inset-0 bg-ink z-40 hidden">
-  <div class="flex flex-col items-center justify-center h-full space-y-8">
-    <a href="#manifesto" class="font-graffiti text-4xl text-paper hover:text-neon-cyan transition-colors mobile-link">
-      MANIFESTO
-    </a>
-    <a href="#services" class="font-graffiti text-4xl text-paper hover:text-neon-pink transition-colors mobile-link">
-      SERVICES
-    </a>
-    <a href="#calculator" class="font-graffiti text-4xl text-paper hover:text-neon-lime transition-colors mobile-link">
-      CALCULATE
-    </a>
-    <a href="#testimonials" class="font-graffiti text-4xl text-paper hover:text-neon-cyan transition-colors mobile-link">
-      PROOF
-    </a>
-    <a href="tel:860-365-1147" class="font-mono text-xl text-punk">
-      860.365.1147
-    </a>
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-white z-40 hidden">
+  <div class="flex flex-col h-full">
+    <div class="flex items-center justify-between p-4 border-b border-fog">
+      <span class="font-serif text-2xl font-bold text-teal">ACE</span>
+      <button id="close-menu-btn">
+        <svg class="w-6 h-6 text-slate" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="flex-1 px-4 py-8 space-y-6">
+      <a href="#about" class="block text-xl font-medium text-midnight hover:text-teal transition-colors mobile-link">
+        About
+      </a>
+      <a href="#services" class="block text-xl font-medium text-midnight hover:text-teal transition-colors mobile-link">
+        Services
+      </a>
+      <a href="#calculator" class="block text-xl font-medium text-midnight hover:text-teal transition-colors mobile-link">
+        Calculator
+      </a>
+      <a href="#testimonials" class="block text-xl font-medium text-midnight hover:text-teal transition-colors mobile-link">
+        Success Stories
+      </a>
+    </div>
+    
+    <div class="p-4 border-t border-fog space-y-4">
+      <a href="tel:860-365-1147" class="flex items-center justify-center gap-2 text-teal">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+        <span class="font-medium">860.365.1147</span>
+      </a>
+      <button class="w-full btn-coral">
+        Get Started
+      </button>
+    </div>
   </div>
 </div>
 
 <script>
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const closeMenuBtn = document.getElementById('close-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
   
   mobileMenuBtn?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+    mobileMenu?.classList.remove('hidden');
+  });
+  
+  closeMenuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.add('hidden');
   });
   
   mobileLinks.forEach(link => {
